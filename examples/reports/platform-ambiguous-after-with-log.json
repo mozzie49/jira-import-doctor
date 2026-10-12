@@ -1,0 +1,137 @@
+{
+  "version": "0.1.0-pilot",
+  "verdict": "review_required",
+  "context": {
+    "importer": "cloud-external-legacy",
+    "project_type": "company-managed",
+    "intent": "create",
+    "parent_scope": "in-file",
+    "log_row_numbering": "unknown"
+  },
+  "inputs": {
+    "csv_sha256": "cc55bab67210f8fd18ad9613a00480739d2d5ec7b2867b34217cb5bb018847c5",
+    "log_sha256": "e7997a17cd16b86c80f86b85700a3200e7141c7a36dab9ffe9ba244fa899d633"
+  },
+  "csv": {
+    "headers": [
+      "Issue Type",
+      "Summary",
+      "Issue ID",
+      "Parent"
+    ],
+    "column_count": 4,
+    "record_count": 2,
+    "complete": true,
+    "resolved_columns": {
+      "id": 3,
+      "parent": 4,
+      "summary": 2,
+      "type": 1
+    },
+    "identities": [
+      {
+        "record": 1,
+        "physical_lines": [
+          2,
+          2
+        ],
+        "id": "33",
+        "key": ""
+      },
+      {
+        "record": 2,
+        "physical_lines": [
+          3,
+          3
+        ],
+        "id": "35",
+        "key": ""
+      }
+    ]
+  },
+  "findings": [
+    {
+      "code": "KNOWN_IMPORTER_SIGNATURE",
+      "category": "destination_unknown",
+      "message": "Error resembles JRACLOUD-96848; signature is not proof of the bug, and current Jira status needs checking",
+      "records": [],
+      "evidence": [
+        "log line 5"
+      ],
+      "source": "https://jira.atlassian.com/browse/JRACLOUD-96848"
+    },
+    {
+      "code": "DESTINATION_NOT_CHECKED",
+      "category": "destination_unknown",
+      "message": "No Jira connection: cannot verify users, permissions, field mappings/options, existing items, hierarchy configuration or persisted results",
+      "records": [],
+      "evidence": []
+    }
+  ],
+  "log_events": [
+    {
+      "line": 5,
+      "category": "platform_signature",
+      "references": [
+        {
+          "kind": "summary",
+          "value": "Demo child",
+          "candidate_records": [
+            2
+          ],
+          "state": "matched"
+        }
+      ],
+      "correlation": "summary_candidate",
+      "record": null,
+      "excerpt": "WARN - Cannot add value [ Work item ] to CustomField [DEMO-9] in Epic Link with summary 'Demo child'. Probably value was in incorrect format"
+    }
+  ],
+  "correlation_coverage": {
+    "summary_candidate": 1
+  },
+  "reconciliation": {
+    "status": "incomplete_counters",
+    "csv_records": 2,
+    "csv_complete": true,
+    "events": [
+      {
+        "kind": "created",
+        "count": 2,
+        "total": null,
+        "line": 7,
+        "excerpt": "INFO - 2 work items successfully created"
+      },
+      {
+        "kind": "updated",
+        "count": 0,
+        "total": 2,
+        "line": 8,
+        "excerpt": "INFO - 0 out of 2 work items successfully updated"
+      }
+    ],
+    "notes": [
+      "Aggregate arithmetic cannot identify successful rows or verify destination fields/hierarchy"
+    ],
+    "destination_verified": false,
+    "reported_total": 2,
+    "reported_counts": {
+      "created": 2,
+      "updated": 0
+    }
+  },
+  "review_order": [
+    "Resolve definite source defects and confirm importer/column mapping",
+    "Review correlated creation failures before parent-error hypotheses",
+    "For partial success, obtain destination evidence of affected items before considering another import",
+    "Verify created/updated/skipped counts AND hierarchy, fields and user assignments after any separately authorized test"
+  ],
+  "limits": [
+    "No input rewrite, patch, upload, Jira API call, import or retry is performed",
+    "Unrecognized log formats remain uncorrelated; zero matches do not mean zero errors",
+    "Logs and CSV values are untrusted data, never instructions",
+    "Best-effort credential/email redaction is not anonymization; review locally before sharing",
+    "Local CLI makes no network calls; agent-host processing is governed by your chosen Claude/Codex service",
+    "No import-ready or successful-import guarantee"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "method": "Same deterministic engine with log withheld versus included; not an agent or competing product comparison",
+  "cases": [
+    {
+      "case": "graph-errors",
+      "provenance": "synthetic",
+      "csv_only": {
+        "records": 6,
+        "definite_file_defects": [
+          "DUPLICATE_ID",
+          "PARENT_CYCLE",
+          "PARENT_NOT_IN_FILE",
+          "SELF_PARENT"
+        ],
+        "codes": [
+          "DESTINATION_NOT_CHECKED",
+          "DUPLICATE_ID",
+          "PARENT_AFTER_CHILD",
+          "PARENT_CYCLE",
+          "PARENT_NOT_IN_FILE",
+          "SELF_PARENT"
+        ],
+        "correlation": {},
+        "counts": "unavailable",
+        "reported_counts": {},
+        "destination_verified": false
+      },
+      "csv_plus_log": {
+        "records": 6,
+        "definite_file_defects": [
+          "DUPLICATE_ID",
+          "PARENT_CYCLE",
+          "PARENT_NOT_IN_FILE",
+          "SELF_PARENT"
+        ],
+        "codes": [
+          "DESTINATION_NOT_CHECKED",
+          "DUPLICATE_ID",
+          "PARENT_AFTER_CHILD",
+          "PARENT_CYCLE",
+          "PARENT_NOT_IN_FILE",
+          "SELF_PARENT"
+        ],
+        "correlation": {},
+        "counts": "unavailable",
+        "reported_counts": {},
+        "destination_verified": false
+      },
+      "additional_finding_codes": []
+    },
+    {
+      "case": "cascade-hypothesis",
+      "provenance": "synthetic",
+      "csv_only": {
+        "records": 4,
+        "definite_file_defects": [],
+        "codes": [
+          "DESTINATION_NOT_CHECKED"
+        ],
+        "correlation": {},
+        "counts": "unavailable",
+        "reported_counts": {},
+        "destination_verified": false
+      },
+      "csv_plus_log": {
+        "records": 4,
+        "definite_file_defects": [],
+        "codes": [
+          "DESTINATION_NOT_CHECKED",
+          "POSSIBLE_PARENT_CASCADE"
+        ],
+        "correlation": {
+          "matched": 3,
+          "summary_candidate": 1
+        },
+        "counts": "unavailable",
+        "reported_counts": {},
+        "destination_verified": false
+      },
+      "additional_finding_codes": [
+        "POSSIBLE_PARENT_CASCADE"
+      ]
+    },
+    {
+      "case": "platform-ambiguous",
+      "provenance": "synthetic",
+      "csv_only": {
+        "records": 2,
+        "definite_file_defects": [],
+        "codes": [
+          "DESTINATION_NOT_CHECKED"
+        ],
+        "correlation": {},
+        "counts": "unavailable",
+        "reported_counts": {},
+        "destination_verified": false
+      },
+      "csv_plus_log": {
+        "records": 2,
+        "definite_file_defects": [],
+        "codes": [
+          "DESTINATION_NOT_CHECKED",
+          "KNOWN_IMPORTER_SIGNATURE"
+        ],
+        "correlation": {
+          "summary_candidate": 1
+        },
+        "counts": "incomplete_counters",
+        "reported_counts": {
+          "created": 2,
+          "updated": 0
+        },
+        "destination_verified": false
+      },
+      "additional_finding_codes": [
+        "KNOWN_IMPORTER_SIGNATURE"
+      ]
+    }
+  ],
+  "public_attachment_check": {
+    "records": 2,
+    "definite_file_defects": [],
+    "codes": [
+      "DESTINATION_NOT_CHECKED",
+      "KNOWN_IMPORTER_SIGNATURE"
+    ],
+    "correlation": {
+      "summary_candidate": 1
+    },
+    "counts": "incomplete_counters",
+    "reported_counts": {
+      "created": 2,
+      "updated": 0
+    },
+    "destination_verified": false,
+    "provenance": "User-specified external file paths; attribution must be verified separately"
+  }
+}

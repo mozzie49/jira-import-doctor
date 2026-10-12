@@ -1,0 +1,3 @@
+* text=auto
+**/__pycache__/** export-ignore
+*.py[cod] export-ignore

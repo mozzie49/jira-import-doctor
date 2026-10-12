@@ -1,0 +1,5 @@
+SYNTHETIC LOG: no Jira attempt was performed.
+ERROR - Error importing issue [externalId='001', summary='Demo epic']: Issue cannot be created; invalid assignee
+ERROR - Error importing issue [externalId='002', summary='Demo story']: Issue doesn't have a valid Parent
+ERROR - Error importing issue [externalId='003', summary='Demo subtask']: Issue doesn't have a valid Parent
+WARN - Assignee could not be resolved with summary 'Independent task'

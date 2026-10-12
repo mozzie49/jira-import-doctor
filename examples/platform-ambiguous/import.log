@@ -1,0 +1,8 @@
+SYNTHETIC LOG: adapted grammar only; no Jira attempt was performed.
+INFO - Importing: Work Items
+INFO - Only new items will be imported
+INFO - Importing work item: [externalId='33', summary='Demo parent']
+WARN - Cannot add value [ Work item ] to CustomField [DEMO-9] in Epic Link with summary 'Demo child'. Probably value was in incorrect format
+INFO - Importing work item: [externalId='35', summary='Demo child']
+INFO - 2 work items successfully created
+INFO - 0 out of 2 work items successfully updated

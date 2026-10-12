@@ -1,0 +1,20 @@
+{
+  "required_frontmatter": "passed",
+  "relative_links_checked": 31,
+  "declared_runtime_imports": [
+    "__future__",
+    "argparse",
+    "collections",
+    "csv",
+    "hashlib",
+    "html",
+    "io",
+    "json",
+    "pathlib",
+    "re",
+    "sys"
+  ],
+  "runtime_import_allowlist": "passed",
+  "live_host_discovery": "not_tested",
+  "security_audit": "not_claimed"
+}

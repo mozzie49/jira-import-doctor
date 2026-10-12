@@ -1,0 +1,56 @@
+[
+  {
+    "host_layout": "claude-code",
+    "copy_and_cli": "passed",
+    "outside_source_cwd": true,
+    "socket_and_subprocess_guard": "passed",
+    "package_validation": {
+      "required_frontmatter": "passed",
+      "relative_links_checked": 31,
+      "declared_runtime_imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "csv",
+        "hashlib",
+        "html",
+        "io",
+        "json",
+        "pathlib",
+        "re",
+        "sys"
+      ],
+      "runtime_import_allowlist": "passed",
+      "live_host_discovery": "not_tested",
+      "security_audit": "not_claimed"
+    },
+    "host_discovery": "not_tested"
+  },
+  {
+    "host_layout": "codex",
+    "copy_and_cli": "passed",
+    "outside_source_cwd": true,
+    "socket_and_subprocess_guard": "passed",
+    "package_validation": {
+      "required_frontmatter": "passed",
+      "relative_links_checked": 31,
+      "declared_runtime_imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "csv",
+        "hashlib",
+        "html",
+        "io",
+        "json",
+        "pathlib",
+        "re",
+        "sys"
+      ],
+      "runtime_import_allowlist": "passed",
+      "live_host_discovery": "not_tested",
+      "security_audit": "not_claimed"
+    },
+    "host_discovery": "not_tested"
+  }
+]

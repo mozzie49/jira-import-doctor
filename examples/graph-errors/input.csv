@@ -1,0 +1,8 @@
+Issue ID,Parent,Summary,Labels,Labels,Component,Component,Description
+001,,First,a,b,one,two,"First line
+second line"
+001,,Duplicate,a,b,one,two,plain
+003,404,Orphan,a,b,one,two,plain
+004,004,Self parent,a,b,one,two,plain
+005,006,Cycle A,a,b,one,two,plain
+006,005,Cycle B,a,b,one,two,plain
