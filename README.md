@@ -78,7 +78,7 @@ python3 scripts/smoke_install.py
 python3 scripts/evaluate.py
 ```
 
-`validate_skill.py` checks required frontmatter, relative resources, and the reviewed runtime import allowlist. `smoke_install.py` copies the package into both host-shaped folders, validates the installed copy, and runs its CLI from outside the source tree under a socket/subprocess-denying guard. These checks do not exercise agent auto-discovery.
+`validate_skill.py` checks required frontmatter, relative resources, and the reviewed runtime import allowlist. `smoke_install.py` copies the package into both host-shaped folders, validates the installed copy, and runs its CLI from outside the source tree under a socket/subprocess-denying guard. These checks do not exercise agent auto-discovery. [Hosted Linux CI](https://github.com/mozzie49/jira-import-doctor/actions/runs/38209314109) has passed the tests, validator, guarded install smokes, ablation and demo comparison on Python 3.10, 3.12 and 3.13.
 
 `evaluate.py` runs a deterministic CSV-only ablation on the same bundled inputs and reports which findings require the log. It does not claim a measured win against a plain agent or Preflight Lab. [The evaluation note](references/evaluation.md) distinguishes tests passed, observed public evidence, and remaining release gates.
 
@@ -90,7 +90,7 @@ Reports include best-effort secret/email redaction, not guaranteed anonymization
 
 ## Alpha limits and feedback
 
-The reproducible package is suitable for supervised local feedback. Known limits are declared rather than treated as measured successes: actual host auto-discovery, Python 3.10 execution, a recurring-importer trial, and a competing-product comparison remain unverified. A small, non-controlled plain-agent comparison found no accuracy advantage; its initial counter-format miss and subsequent fix are documented in [evaluation](references/evaluation.md). No claim of superiority, guaranteed compatibility, import readiness, or live success is made.
+The reproducible package is suitable for supervised local feedback. Known limits are declared rather than treated as measured successes: actual host auto-discovery, a recurring-importer trial, and a competing-product comparison remain unverified. A small, non-controlled plain-agent comparison found no accuracy advantage; its initial counter-format miss and subsequent fix are documented in [evaluation](references/evaluation.md). No claim of superiority, guaranteed compatibility, import readiness, or live success is made.
 
 A useful feedback report includes the importer/profile, intended operation, expected diagnostic decision, and a genuinely sanitized minimal CSV/log pair. Never include credentials or private customer files. [Fixture provenance](references/provenance.md) separates our synthetic demos from attributed public-source observations. No third-party attachment redistribution permission is assumed.
 

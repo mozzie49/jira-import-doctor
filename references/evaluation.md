@@ -1,13 +1,14 @@
 # Pilot evaluation and release gate
 
-Evaluation date: 12 October 2026. Runtime actually tested: Python 3.12.14, Linux. Claimed minimum Python 3.10 follows the used language features; 3.10 itself has not been run. No Jira account, import, private input, upload, public repository, or promotion was used for this pilot.
+Evaluation date: 12 October 2026. The local runtime was Python 3.12.14 on Linux. Following publication, [hosted Linux CI](https://github.com/mozzie49/jira-import-doctor/actions/runs/38209314109) passed on Python 3.10, 3.12 and 3.13 for commit `17586295711af50de06ff5743c36f622c40fc151`. The diagnostic evaluation used no Jira account, import, private input or input-file upload. Public source-code publication and CI do not establish any live Jira outcome.
 
 ## Results actually observed
 
 - 61 standard-library unittest cases pass (56 core diagnostics + 5 package-validation checks), including duplicate multivalue headers, opaque/leading-zero IDs, multiline CSV line ranges, ambiguous/no-match log references, generated IDs, counter ambiguity, token/email redaction, original-byte immutability, output overwrite refusal, and bounded cascade traces
 - The bundled `scripts/validate_skill.py` verifies required name/description frontmatter, installed relative resources, and the reviewed runtime import allowlist without third-party packages. Five tests cover valid/missing metadata, broken relative links, network imports and dynamic execution. Skill-creator metadata/scaffold validation also passes; neither proves agent behavior
 - Isolated project-shaped copies under `.claude/skills/jira-import-doctor` and `.agents/skills/jira-import-doctor` both validate the installed copy and run its CLI from a separate working directory under a socket/subprocess-denying audit guard, yielding expected artifacts. The guard confirms no network/process operation occurred in that execution; it is not a full security audit
-- Actual Claude Code/Codex discovery, triggering, clean-host dependency setup and multi-version compatibility are **not tested** by that smoke. Claude Code is absent from the available environment; no host-side settings were changed
+- Actual Claude Code/Codex discovery, triggering and clean-host agent integration are **not tested** by that smoke. The hosted Python version matrix tests the CLI on Linux, not either agent host. Claude Code is absent from the available environment; no host-side settings were changed
+- [Hosted CI](https://github.com/mozzie49/jira-import-doctor/actions/runs/38209314109) passed all three Python-version jobs, including unit tests, package validation, guarded copy/run smoke, CSV/log ablation and generated-demo comparison. Python 3.10 execution is now verified in that environment; broader platform compatibility remains unclaimed
 - The same deterministic engine with the log withheld vs included is reproducible with `python3 scripts/evaluate.py`. The full compact observed output is [evaluation-results.json](evaluation-results.json)
 
 The ablation yields:
