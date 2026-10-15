@@ -6,9 +6,16 @@
 
 这是一个只读诊断工具。它不会连接 Jira、上传文件、修改原始 CSV、生成修复补丁或重试导入。Python 3.10+，仅使用标准库，无需 API Key。它不是经过生产验证的导入器。
 
-## 一条命令试用
+## 试用内置样例
 
-在本目录运行：
+准备好 Git 和 Python 3.10+ 后，将仓库克隆到一个新目录：
+
+```sh
+git clone https://github.com/mozzie49/jira-import-doctor.git
+cd jira-import-doctor
+```
+
+在仓库根目录运行合成样例：
 
 ```sh
 python3 scripts/jira_import_doctor.py --csv examples/cascade-hypothesis/input.csv --log examples/cascade-hypothesis/import.log --context examples/cascade-hypothesis/context.json --out /tmp/jira-diagnosis-demo
