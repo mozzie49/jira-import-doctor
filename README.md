@@ -6,9 +6,16 @@ English | [简体中文](README.zh-CN.md)
 
 The useful addition to CSV preflight is evidence across the file and failed attempt. It does not connect to Jira, upload files, edit the source, generate a repair patch, or rerun an import. No API key. Python 3.10+ standard library. Experimental, read-only diagnosis. Not validated as a production importer.
 
-## Try it in one command
+## Try the bundled example
 
-From this folder:
+With Git and Python 3.10+ available, clone the repository into a new directory:
+
+```sh
+git clone https://github.com/mozzie49/jira-import-doctor.git
+cd jira-import-doctor
+```
+
+Run the synthetic example from the repository root:
 
 ```sh
 python3 scripts/jira_import_doctor.py --csv examples/cascade-hypothesis/input.csv --log examples/cascade-hypothesis/import.log --context examples/cascade-hypothesis/context.json --out /tmp/jira-diagnosis-demo
